@@ -1,0 +1,38 @@
+# Starter pipeline
+
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+
+# Add steps that build, run tests, deploy, and more:
+
+# https://aka.ms/yaml
+
+
+trigger:
+
+- master
+
+
+jobs:
+- job: RunTest3
+  displayName: 'Run Tests'
+  pool: Default
+  steps:       
+  - task: VisualStudioTestPlatformInstaller@1
+    displayName: 'Visual Studio Test Platform Installer'
+    inputs:
+      versionSelector: 'latestPreRelease'
+  - task: VSTest@2
+    inputs:       
+      testSelector: 'testAssemblies'
+      testAssemblyVer2: '**\*UnitTestProject1*.dll'
+      searchFolder: '$(System.DefaultWorkingDirectory)\bin\Debug\'
+      testFiltercriteria: 'Priority = 0 | FullyQualifiedName ~ TestRunParameter | FullyQualifiedName = UnitTestProject1.UnitTest1.PassingTest'
+      runSettingsFile: '\SampleTestSettings1.testsettings'
+      overrideTestrunParameters: '-connectionString DataSource=tcp:ServerName.database.windows.net,1433;InitialCatalog=DatabaseName -param1 OverrideParam1Value'
+      pathtoCustomTestAdapters: '$(Build.SourcesDirectory)'
+      runInParallel: true
+      codeCoverageEnabled: true
+      publishRunAttachments: true
+      testRunTitle: 'VsTestV2WithCustomValuesTestWithTestSettings'
+      platform: '$(BuildPlatform)'
+      configuration: '$(BuildConfiguration)'
