@@ -27,7 +27,7 @@ jobs:
       testAssemblyVer2: '**\*UnitTestProject1*.dll'
       searchFolder: '$(System.DefaultWorkingDirectory)\bin\Debug\'
       testFiltercriteria: 'Priority = 0 | FullyQualifiedName ~ TestRunParameter | FullyQualifiedName = UnitTestProject1.UnitTest1.PassingTest'
-      runSettingsFile: '\SampleTestSettings1.testsettings'
+      runSettingsFile: 'SampleTestSettings1.testsettings'
       overrideTestrunParameters: '-connectionString DataSource=tcp:ServerName.database.windows.net,1433;InitialCatalog=DatabaseName -param1 OverrideParam1Value'
       pathtoCustomTestAdapters: '$(Build.SourcesDirectory)'
       runInParallel: true
