@@ -24,7 +24,7 @@ jobs:
   - task: VSTest@2
     inputs:       
       testSelector: 'testAssemblies'
-      testAssemblyVer2: '**\*UnitTestProject1*.dll'
+      testAssemblyVer2: '**/*UnitTestProject1*.dll'
       searchFolder: '$(System.DefaultWorkingDirectory)\bin\Debug\'
       testFiltercriteria: 'Priority = 0 | FullyQualifiedName ~ TestRunParameter | FullyQualifiedName = UnitTestProject1.UnitTest1.PassingTest'
       runSettingsFile: 'SampleTestSettings1.testsettings'
