@@ -32,8 +32,6 @@ jobs:
       pathtoCustomTestAdapters: '$(Build.SourcesDirectory)'
       vsTestVersion: 'toolsInstaller'
       runInParallel: true
-      codeCoverageEnabled: true
-      publishRunAttachments: true
       testRunTitle: 'VsTestV2WithCustomValuesTestWithTestSettings'
       platform: '$(BuildPlatform)'
       configuration: '$(BuildConfiguration)'
