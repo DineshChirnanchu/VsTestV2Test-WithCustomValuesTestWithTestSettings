@@ -23,5 +23,4 @@ jobs:
       vsTestVersion: 'toolsInstaller'
       runInParallel: true
       testRunTitle: 'VsTestV2WithCustomValuesTestWithTestSettings'
-      platform: '$(BuildPlatform)'
-      configuration: '$(BuildConfiguration)'
+      
