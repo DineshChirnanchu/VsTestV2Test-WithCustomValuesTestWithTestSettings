@@ -15,7 +15,7 @@ jobs:
     inputs:       
       testSelector: 'testAssemblies'
       testAssemblyVer2: |
-        **\*UnitTestProject1*.dll'
+        **\*UnitTestProject1*.dll
         !**\obj\**
       searchFolder: '$(System.DefaultWorkingDirectory)\UnitTestProject1\bin\Release\'
       testFiltercriteria: 'Priority = 3 | FullyQualifiedName ~ TestRunParameter | FullyQualifiedName = NUnit.Tests1.TestClass.TestMethod'
