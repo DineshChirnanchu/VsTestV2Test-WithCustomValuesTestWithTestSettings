@@ -1,7 +1,5 @@
 # The objective is to perform VSTESTV2 with TestSettings
 
-trigger:
-- master
 jobs:
 - job: RunTest3
   displayName: 'Run Tests'
